@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Soham Traders</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif
+}
+body{background:#f8fafc;color:#1f2937}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0f2a5f,#123a7a);
+  color:#fff;
+  padding:80px 20px;
+  text-align:center
+}
+.hero h1{font-size:48px;margin-bottom:10px}
+.hero p{font-size:20px;color:#c7d2fe}
+
+.founder{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:30px;
+  margin-top:50px;
+  flex-wrap:wrap
+}
+.founder img{
+  width:180px;height:180px;border-radius:50%;
+  border:4px solid #fff;object-fit:cover
+}
+.badge{
+  margin-top:10px;background:#fff;color:#0f2a5f;
+  padding:10px 20px;border-radius:30px;font-weight:bold
+}
+
+/* SECTIONS */
+section{padding:60px 20px;background:#fff}
+h2{text-align:center;font-size:32px;margin-bottom:30px}
+
+/* SLIDER FOR COMPANIES */
+.slider{overflow:hidden;width:100%}
+.track{
+  display:flex;
+  width:max-content;
+  animation:scroll-left 30s linear infinite
+}
+
+@keyframes scroll-left{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* BRAND / COMPANY CARDS */
+.brand{
+  min-width:260px;
+  margin:0 15px;
+  padding:20px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.1);
+  text-align:center
+}
+.brand p{font-weight:bold;font-size:14px}
+
+/* GRID LAYOUT FOR PRODUCTS */
+.grid-container{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+  padding:0 20px;
+}
+
+/* PRODUCT CARDS */
+.card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 28px rgba(0,0,0,.18);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card p{
+  padding:15px;
+  text-align:center;
+  font-weight:bold;
+  background:#1e3a8a;
+  color:#fff;
+  font-size:15px;
+}
+
+/* ---------- ABOUT ---------- */
+.about-box{
+  max-width:900px;
+  margin:auto;
+  background:#123a7a;
+  padding:30px;
+  border-radius:12px;
+}
+
+.about-box p{
+  margin-bottom:12px;
+  line-height:1.6;
+  color:#dbeafe;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:#123a7a;
+  color:#94a3b8;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-container{
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+  }
+  
+  .hero h1{font-size:36px;}
+  .hero p{font-size:18px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>SOHAM TRADERS</h1>
+  <p>Premium Stationery & Housekeeping Solutions</p>
+
+  <div class="founder">
+    <img src="images/founder.jpg" alt="Founder">
+    <div>
+      <h2>Thorat Nitin Kashinath</h2>
+      <p>Founder & Owner</p>
+      <div class="badge">10+ Years of Excellence</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPANIES WORKED WITH -->
+<section>
+<h2>Companies We've Worked With</h2>
+<div class="slider">
+  <div class="track">
+    <!-- duplicate list -->
+    <div class="brand"><p>GODREJ & BOYCE<br>Shirwal</p></div>
+    <div class="brand"><p>ASIAN PAINTS<br>Satara</p></div>
+    <div class="brand"><p>HIKAL INDIA<br>Hinjewadi</p></div>
+    <div class="brand"><p>BAJAJ ELECTRICALS<br>Chakan</p></div>
+    <div class="brand"><p>SAINT-GOBAIN SEKURIT<br>Chakan</p></div>
+    <div class="brand"><p>PRAJ MATRIX R&D<br>Pirangut</p></div>
+    <div class="brand"><p>LUPIN INDIA LTD</p></div>
+    <div class="brand"><p>T-WALKER PHARMACEUTICALS</p></div>
+    <div class="brand"><p>ADISON LAB<br>Ranjangaon</p></div>
+    <div class="brand"><p>QH TALBROS<br>Shirwal</p></div>
+
+    <!-- duplicate again -->
+    <div class="brand"><p>GODREJ & BOYCE</p></div>
+    <div class="brand"><p>ASIAN PAINTS</p></div>
+    <div class="brand"><p>HIKAL INDIA</p></div>
+    <div class="brand"><p>BAJAJ ELECTRICALS</p></div>
+    <div class="brand"><p>SAINT-GOBAIN</p></div>
+  </div>
+</div>
+</section>
+
+<!-- CATALOGUE 1 - GRID LAYOUT -->
+<section>
+<h2>Office Stationery Essentials</h2>
+<div class="grid-container">
+  <div class="card">
+    <img src="Images/box-files.jpg" alt="Box Files">
+    <p>Box Files</p>
+  </div>
+  <div class="card">
+    <img src="Images/staplers.jpg" alt="Staplers">
+    <p>Staplers</p>
+  </div>
+  <div class="card">
+    <img src="Images/printing-paper.jpg" alt="Printing Paper">
+    <p>Printing Paper</p>
+  </div>
+  <div class="card">
+    <img src="Images/desk-organizer.jpg" alt="Desk Organizer">
+    <p>Desk Organizer</p>
+  </div>
+  <div class="card">
+    <img src="Images/markers.jpg" alt="Markers">
+    <p>Markers</p>
+  </div>
+   <div class="card">
+    <img src="Images/pens.jpg" alt="Use and Throw Pens">
+    <p>Use and Throw Pens</p>
+  </div>
+  <div class="card">
+    <img src="Images/notebook.png" alt="NoteBook">
+    <p>NoteBook</p>
+  </div>
+   <div class="card">
+    <img src="Images/binder-clips.jpg" alt="Binder Clips">
+    <p>Binder Clips</p>
+  </div>
+</div>
+</section>
+
+<!-- CATALOGUE 2 - GRID LAYOUT -->
+<section>
+<h2>Housekeeping & Safety Supplies</h2>
+<div class="grid-container">
+  <div class="card">
+    <img src="images/dustbins.jpg" alt="Dustbins">
+    <p>Dustbins</p>
+  </div>
+  <div class="card">
+    <img src="Images/gloves.jpg" alt="Disposable Gloves">
+    <p>Disposable Gloves</p>
+  </div>
+  <div class="card">
+    <img src="Images/buffet-caps.jpg" alt="Buffet Caps">
+    <p>Buffet Caps</p>
+  </div>
+  <div class="card">
+    <img src="Images/cleaning-chemicals.jpg" alt="Cleaning Chemicals">
+    <p>Cleaning Chemicals</p>
+  </div>
+  <div class="card">
+    <img src="Images/floor-wipers.jpg" alt="Floor Wipers">
+    <p>Floor Wipers</p>
+  </div>
+   <div class="card">
+    <img src="Images/broom.jpg" alt="Broom">
+    <p>Broom</p>
+  </div>
+  <div class="card">
+    <img src="Images/hand-wash.jpg" alt="Hand Wash">
+    <p>Hand Wash</p>
+  </div>
+   <div class="card">
+    <img src="Images/cleaning-cloth.jpg" alt="Cleaning Cloth">
+    <p>Cleaning Cloth</p>
+  </div>
+</div>
+</section>
+
+<!-- ABOUT US -->
+<section class="dark">
+  <h2>About Us</h2>
+  <div class="about-box">
+    <p><strong>Owner:</strong> Thorat Nitin Kashinath</p>
+
+    <p><strong>Registered Address:</strong><br>
+      Sr. No. 218/2, Prem Nivas, Vitthal Park,<br>
+      Sant Tukaram Nagar, Bhosari,<br>
+      Pune – 39
+    </p>
+
+    <p><strong>Office Address:</strong><br>
+      B-1 T-80, Mangal Murti Apartment,<br>
+      MIDC Bhosari, Pune – 39
+    </p>
+
+    <p><strong>Mobile:</strong> 80879997616</p>
+  </div>
+</section>
+
+<footer>
+© 2026 Soham Traders. All Rights Reserved.
+</footer>
+
+</body>
+</html>
