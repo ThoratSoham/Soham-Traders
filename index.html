@@ -1,297 +1,1181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Soham Traders</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Traders - Office Supplies & Business Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif
-}
-body{background:#f8fafc;color:#1f2937}
+        :root {
+            --primary-blue: #1e5aa8;
+            --light-blue: #e8f4f8;
+            --sky-blue: #0099ff;
+            --dark-blue: #0d2d5c;
+            --white: #ffffff;
+            --text-gray: #333333;
+            --light-gray: #f5f5f5;
+            --border-gray: #e0e0e0;
+            --accent-blue: #0077cc;
+        }
 
-/* HERO */
-.hero{
-  background:linear-gradient(135deg,#0f2a5f,#123a7a);
-  color:#fff;
-  padding:80px 20px;
-  text-align:center
-}
-.hero h1{font-size:48px;margin-bottom:10px}
-.hero p{font-size:20px;color:#c7d2fe}
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-gray);
+            line-height: 1.6;
+            background: var(--white);
+        }
 
-.founder{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:30px;
-  margin-top:50px;
-  flex-wrap:wrap
-}
-.founder img{
-  width:180px;height:180px;border-radius:50%;
-  border:4px solid #fff;object-fit:cover
-}
-.badge{
-  margin-top:10px;background:#fff;color:#0f2a5f;
-  padding:10px 20px;border-radius:30px;font-weight:bold
-}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 2px solid var(--light-blue);
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(30, 90, 168, 0.1);
+        }
 
-/* SECTIONS */
-section{padding:60px 20px;background:#fff}
-h2{text-align:center;font-size:32px;margin-bottom:30px}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* SLIDER FOR COMPANIES */
-.slider{overflow:hidden;width:100%}
-.track{
-  display:flex;
-  width:max-content;
-  animation:scroll-left 30s linear infinite
-}
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
 
-@keyframes scroll-left{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
 
-/* BRAND / COMPANY CARDS */
-.brand{
-  min-width:260px;
-  margin:0 15px;
-  padding:20px;
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 6px 16px rgba(0,0,0,.1);
-  text-align:center
-}
-.brand p{font-weight:bold;font-size:14px}
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
 
-/* GRID LAYOUT FOR PRODUCTS */
-.grid-container{
-  max-width:1200px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-  gap:25px;
-  padding:0 20px;
-}
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--sky-blue);
+            transition: width 0.3s;
+        }
 
-/* PRODUCT CARDS */
-.card{
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .nav-links a:hover {
+            color: var(--sky-blue);
+        }
 
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 28px rgba(0,0,0,.18);
-}
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
+        .cta-button {
+            background: var(--sky-blue);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
 
-.card p{
-  padding:15px;
-  text-align:center;
-  font-weight:bold;
-  background:#1e3a8a;
-  color:#fff;
-  font-size:15px;
-}
+        .cta-button:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 153, 255, 0.3);
+        }
 
-/* ---------- ABOUT ---------- */
-.about-box{
-  max-width:900px;
-  margin:auto;
-  background:#123a7a;
-  padding:30px;
-  border-radius:12px;
-}
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 85vh;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-.about-box p{
-  margin-bottom:12px;
-  line-height:1.6;
-  color:#dbeafe;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 153, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
 
-/* ---------- FOOTER ---------- */
-footer{
-  background:#123a7a;
-  color:#94a3b8;
-  text-align:center;
-  padding:15px;
-  font-size:14px;
-}
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .grid-container{
-    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-    gap:20px;
-  }
-  
-  .hero h1{font-size:36px;}
-  .hero p{font-size:18px;}
-}
-</style>
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            border: 2px solid white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--sky-blue);
+            color: white;
+            border-color: var(--sky-blue);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 153, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 450px;
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 153, 255, 0.2), rgba(255, 255, 255, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            height: 350px;
+            background: linear-gradient(135deg, var(--sky-blue), var(--primary-blue));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Vision & Mission */
+        .vision-mission {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .vm-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vm-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .vm-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .vm-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .vm-card {
+            background: var(--light-blue);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--sky-blue);
+            transition: all 0.3s;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(30, 90, 168, 0.15);
+        }
+
+        .vm-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .vm-card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--light-blue);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            border-color: var(--sky-blue);
+            box-shadow: 0 8px 20px rgba(30, 90, 168, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--sky-blue), var(--primary-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-category {
+            background: white;
+            border: 2px solid var(--light-blue);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .product-category:hover {
+            border-color: var(--sky-blue);
+            box-shadow: 0 10px 30px rgba(30, 90, 168, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--light-blue), rgba(0, 153, 255, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .category-content {
+            padding: 2rem;
+        }
+
+        .category-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .product-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-list li {
+            padding: 0.5rem 0;
+            color: #666;
+            border-bottom: 1px solid var(--border-gray);
+            font-size: 0.95rem;
+        }
+
+        .product-list li:last-child {
+            border-bottom: none;
+        }
+
+        .product-list li::before {
+            content: '✓ ';
+            color: var(--sky-blue);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .view-btn {
+            display: inline-block;
+            background: var(--sky-blue);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .view-btn:hover {
+            background: var(--primary-blue);
+            transform: translateX(5px);
+        }
+
+        /* Customers Section */
+        .customers {
+            padding: 5rem 2rem;
+            background: var(--light-blue);
+        }
+
+        .customers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .customers-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .customers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .customer-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .customer-item:hover {
+            box-shadow: 0 5px 15px rgba(30, 90, 168, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .customer-item p {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .customer-item span {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Company Info Section */
+        .company-info {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .info-box {
+            background: var(--light-blue);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--sky-blue);
+        }
+
+        .info-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light-blue);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sky-blue);
+            box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--sky-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 153, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section a,
+        .footer-section p {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 0.7rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--sky-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .vm-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Soham Traders</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#customers">Customers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button">Get in Touch</button>
+        </div>
+    </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>SOHAM TRADERS</h1>
-  <p>Premium Stationery & Housekeeping Solutions</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Quality Office Solutions at Best Prices</h1>
+                <p>Your trusted partner for office stationery, housekeeping products, printing and branding services. Serving businesses across Pune and beyond.</p>
+                <div class="button-group">
+                    <button class="btn btn-primary">Explore Products</button>
+                    <button class="btn btn-secondary">Contact Us</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">📦</div>
+            </div>
+        </div>
+    </section>
 
-  <div class="founder">
-    <img src="images/founder.jpg" alt="Founder">
-    <div>
-      <h2>Thorat Nitin Kashinath</h2>
-      <p>Founder & Owner</p>
-      <div class="badge">10+ Years of Excellence</div>
-    </div>
-  </div>
-</div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About Soham Traders</h2>
+                <p>Soham Traders is a trusted general trading company with a vast network of professional suppliers and partners. We specialize in providing high-quality office supplies, housekeeping and packing products, along with professional printing and branding services.</p>
+                <p>With our commitment to excellence and customer satisfaction, we have built strong relationships with leading enterprises in the manufacturing and industrial sectors.</p>
+                <p>Our mission is to deliver quality products at the most cost-effective prices, and our vision is to be the premier partner of choice for reliable and efficient business solutions.</p>
+            </div>
+            <div class="about-image">🏢</div>
+        </div>
+    </section>
 
-<!-- COMPANIES WORKED WITH -->
-<section>
-<h2>Companies We've Worked With</h2>
-<div class="slider">
-  <div class="track">
-    <!-- duplicate list -->
-    <div class="brand"><p>GODREJ & BOYCE<br>Shirwal</p></div>
-    <div class="brand"><p>ASIAN PAINTS<br>Satara</p></div>
-    <div class="brand"><p>HIKAL INDIA<br>Hinjewadi</p></div>
-    <div class="brand"><p>BAJAJ ELECTRICALS<br>Chakan</p></div>
-    <div class="brand"><p>SAINT-GOBAIN SEKURIT<br>Chakan</p></div>
-    <div class="brand"><p>PRAJ MATRIX R&D<br>Pirangut</p></div>
-    <div class="brand"><p>LUPIN INDIA LTD</p></div>
-    <div class="brand"><p>T-WALKER PHARMACEUTICALS</p></div>
-    <div class="brand"><p>ADISON LAB<br>Ranjangaon</p></div>
-    <div class="brand"><p>QH TALBROS<br>Shirwal</p></div>
+    <!-- Vision & Mission -->
+    <section class="vision-mission" id="services">
+        <div class="vm-container">
+            <div class="vm-header">
+                <h2>Our Vision & Mission</h2>
+            </div>
+            <div class="vm-cards">
+                <div class="vm-card">
+                    <h3>🎯 Vision</h3>
+                    <p>To be the premier partner of choice by providing the most cost-effective, efficient and reliable products and services to businesses and organizations.</p>
+                </div>
+                <div class="vm-card">
+                    <h3>💼 Mission</h3>
+                    <p>Quality at the most cost-effective price is the supreme core value of Soham Traders. We manifest this through excellence in our individual and cooperative work, making it our way of life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- duplicate again -->
-    <div class="brand"><p>GODREJ & BOYCE</p></div>
-    <div class="brand"><p>ASIAN PAINTS</p></div>
-    <div class="brand"><p>HIKAL INDIA</p></div>
-    <div class="brand"><p>BAJAJ ELECTRICALS</p></div>
-    <div class="brand"><p>SAINT-GOBAIN</p></div>
-  </div>
-</div>
-</section>
+    <!-- Services Section -->
+    <section class="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions tailored to meet all your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>General Stationery</h3>
+                    <p>Wide range of office stationery products including papers, pens, files, envelopes, and desk organizers at competitive prices.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧹</div>
+                    <h3>Housekeeping Products</h3>
+                    <p>Premium housekeeping and cleaning supplies to maintain a hygienic and professional work environment.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Packing Materials</h3>
+                    <p>High-quality packing and packaging materials for safe handling and transportation of goods.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🖨️</div>
+                    <h3>Printing Services</h3>
+                    <p>Professional printing services for business cards, documents, brochures, and custom materials.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏷️</div>
+                    <h3>Branding Services</h3>
+                    <p>Customized branding solutions to promote your business and create lasting impressions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3>Printer Solutions</h3>
+                    <p>Supply, maintenance, and servicing of printers and printer consumables for your office needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- CATALOGUE 1 - GRID LAYOUT -->
-<section>
-<h2>Office Stationery Essentials</h2>
-<div class="grid-container">
-  <div class="card">
-    <img src="images/box-files.jpg" alt="Box Files">
-    <p>Box Files</p>
-  </div>
-  <div class="card">
-    <img src="images/stapler.jpg" alt="Staplers">
-    <p>Staplers</p>
-  </div>
-  <div class="card">
-    <img src="images/printing-paper.jpg" alt="Printing Paper">
-    <p>Printing Paper</p>
-  </div>
-  <div class="card">
-    <img src="images/desk-organizer.jpg" alt="Desk Organizer">
-    <p>Desk Organizer</p>
-  </div>
-  <div class="card">
-    <img src="images/markers.jpg" alt="Markers">
-    <p>Markers</p>
-  </div>
-   <div class="card">
-    <img src="images/pens.jpg" alt="Use and Throw Pens">
-    <p>Use and Throw Pens</p>
-  </div>
-  <div class="card">
-    <img src="images/notebook.png" alt="NoteBook">
-    <p>NoteBook</p>
-  </div>
-   <div class="card">
-    <img src="images/binder-clips.jpg" alt="Binder Clips">
-    <p>Binder Clips</p>
-  </div>
-</div>
-</section>
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="products-container">
+            <div class="section-header">
+                <h2>Product Categories</h2>
+                <p>Explore our comprehensive range of quality products</p>
+            </div>
 
-<!-- CATALOGUE 2 - GRID LAYOUT -->
-<section>
-<h2>Housekeeping & Safety Supplies</h2>
-<div class="grid-container">
-  <div class="card">
-    <img src="images/dustbins.jpg" alt="Dustbins">
-    <p>Dustbins</p>
-  </div>
-  <div class="card">
-    <img src="images/gloves.jpg" alt="Disposable Gloves">
-    <p>Disposable Gloves</p>
-  </div>
-  <div class="card">
-    <img src="images/buffet-caps.jpg" alt="Buffet Caps">
-    <p>Buffet Caps</p>
-  </div>
-  <div class="card">
-    <img src="images/cleaning-chemicals.jpg" alt="Cleaning Chemicals">
-    <p>Cleaning Chemicals</p>
-  </div>
-  <div class="card">
-    <img src="images/floor-wipers.jpg" alt="Floor Wipers">
-    <p>Floor Wipers</p>
-  </div>
-   <div class="card">
-    <img src="images/broom.jpg" alt="Broom">
-    <p>Broom</p>
-  </div>
-  <div class="card">
-    <img src="images/hand-wash.jpg" alt="Hand Wash">
-    <p>Hand Wash</p>
-  </div>
-   <div class="card">
-    <img src="images/cleaning-cloth.jpg" alt="Cleaning Cloth">
-    <p>Cleaning Cloth</p>
-  </div>
-</div>
-</section>
+            <div class="product-categories">
+                <!-- General Stationery -->
+                <div class="product-category">
+                    <div class="category-image">📚</div>
+                    <div class="category-content">
+                        <h3>General Stationery</h3>
+                        <ul class="product-list">
+                            <li>Box Files & Folders</li>
+                            <li>Staplers & Pins</li>
+                            <li>Printing Paper</li>
+                            <li>Envelopes</li>
+                            <li>Pens & Pencils</li>
+                            <li>Carbon & Tracing Paper</li>
+                            <li>Desk Organizers</li>
+                            <li>Trays & Stick-ons</li>
+                            <li>Paper Shredders</li>
+                        </ul>
+                        <button class="view-btn">Learn More</button>
+                    </div>
+                </div>
 
-<!-- ABOUT US -->
-<section class="dark">
-  <h2>About Us</h2>
-  <div class="about-box">
-    <p><strong>Owner:</strong> Thorat Nitin Kashinath</p>
+                <!-- Printers & Servicing -->
+                <div class="product-category">
+                    <div class="category-image">🖨️</div>
+                    <div class="category-content">
+                        <h3>Printers & Servicing</h3>
+                        <ul class="product-list">
+                            <li>Printer Machines</li>
+                            <li>Printer Consumables</li>
+                            <li>Toner Cartridges</li>
+                            <li>Ink Cartridges</li>
+                            <li>Printer Maintenance</li>
+                            <li>Technical Support</li>
+                            <li>Preventive Servicing</li>
+                            <li>Emergency Repairs</li>
+                        </ul>
+                        <button class="view-btn">Learn More</button>
+                    </div>
+                </div>
 
-    <p><strong>Registered Address:</strong><br>
-      Sr. No. 218/2, Prem Nivas, Vitthal Park,<br>
-      Sant Tukaram Nagar, Bhosari,<br>
-      Pune – 39
-    </p>
+                <!-- Housekeeping Products -->
+                <div class="product-category">
+                    <div class="category-image">🧹</div>
+                    <div class="category-content">
+                        <h3>Housekeeping Products</h3>
+                        <ul class="product-list">
+                            <li>Cleaning Supplies</li>
+                            <li>Disinfectants</li>
+                            <li>Sanitation Products</li>
+                            <li>Waste Management</li>
+                            <li>Hygiene Products</li>
+                            <li>Office Cleaners</li>
+                            <li>Maintenance Supplies</li>
+                            <li>Protective Equipment</li>
+                        </ul>
+                        <button class="view-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p><strong>Office Address:</strong><br>
-      B-1 T-80, Mangal Murti Apartment,<br>
-      MIDC Bhosari, Pune – 39
-    </p>
+    <!-- Customers Section -->
+    <section class="customers" id="customers">
+        <div class="customers-container">
+            <div class="section-header customers-header">
+                <h2 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Our Valued Customers</h2>
+                <p style="color: var(--text-gray);">Trusted by leading enterprises and manufacturers across various industries</p>
+            </div>
 
-    <p><strong>Mobile:</strong> 80879997616</p>
-  </div>
-</section>
+            <div class="customers-grid">
+                <div class="customer-item">
+                    <p>Godrej & Boyce Manufacturing Co.</p>
+                    <span>Shirwal</span>
+                </div>
+                <div class="customer-item">
+                    <p>Asian Paints Ltd</p>
+                    <span>Satara, Shirwal</span>
+                </div>
+                <div class="customer-item">
+                    <p>HIKAL India</p>
+                    <span>Hinjewadi</span>
+                </div>
+                <div class="customer-item">
+                    <p>Bajaj Electrical Ltd</p>
+                    <span>Chakan</span>
+                </div>
+                <div class="customer-item">
+                    <p>Sai-Gobin Securit</p>
+                    <span>Chakan</span>
+                </div>
+                <div class="customer-item">
+                    <p>Praj Matrices R&D Center</p>
+                    <span>Pirangutes</span>
+                </div>
+                <div class="customer-item">
+                    <p>Lupin India Ltd</p>
+                    <span>Pune Region</span>
+                </div>
+                <div class="customer-item">
+                    <p>T-Walker Pharmaceuticals Pvt Ltd</p>
+                    <span>Pune</span>
+                </div>
+                <div class="customer-item">
+                    <p>Addison Lab</p>
+                    <span>Rajangaon, Pune</span>
+                </div>
+                <div class="customer-item">
+                    <p>QH Tallbros Pvt Ltd</p>
+                    <span>Shirwal</span>
+                </div>
+                <div class="customer-item">
+                    <p>Kaiser Compressors Pvt Ltd</p>
+                    <span>Pune</span>
+                </div>
+                <div class="customer-item">
+                    <p>Intok India Ltd</p>
+                    <span>Pirangutes</span>
+                </div>
+                <div class="customer-item">
+                    <p>Cee-Dee Vacuum Equipments Pvt Ltd</p>
+                    <span>Pune</span>
+                </div>
+                <div class="customer-item">
+                    <p>MJ Biopharma Ltd</p>
+                    <span>Hinjewadi</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-© 2026 Soham Traders. All Rights Reserved.
-</footer>
+    <!-- Company Info Section -->
+    <section class="company-info">
+        <div class="info-container">
+            <div class="info-header">
+                <h2 style="color: var(--primary-blue); margin-bottom: 1rem;">Company Details</h2>
+            </div>
 
+            <div class="info-grid">
+                <!-- Owner & Business -->
+                <div class="info-box">
+                    <h3>Ownership</h3>
+                    <p><strong>Owner:</strong> Thorat Nitin Kashinath</p>
+                    <p style="margin-top: 1rem;"><strong>Business Type:</strong> General Trading Company</p>
+                    <p style="margin-top: 1rem;"><strong>Service Area:</strong> Pune and surrounding regions</p>
+                </div>
+
+                <!-- Registered Address -->
+                <div class="info-box">
+                    <h3>Registered Address</h3>
+                    <p>Sr.no. 218/2, Prem Nivas Vitthal Park<br>Sant Tukaram Nagar<br>Bhosari, Pune - 411039</p>
+                </div>
+
+                <!-- Office Address -->
+                <div class="info-box">
+                    <h3>Office Address</h3>
+                    <p>B-1, T-80 Mangalmurti Apartment<br>MIDC, Bhosari<br>Pune - 411039</p>
+                </div>
+
+                <!-- Tax Information -->
+                <div class="info-box">
+                    <h3>Tax Information</h3>
+                    <p><strong>GST:</strong> 27AIZPT5557C1ZI<br></p>
+                    <p><strong>VAT TIN:</strong> 27760810353 C<br></p>
+                    <p><strong>CST TIN:</strong> 27760810353 C<br></p>
+                    <p><strong>PAN:</strong> AIZPT5557C</p>
+                </div>
+
+                <!-- Bank Details -->
+                <div class="info-box">
+                    <h3>Bank Details</h3>
+                    <p><strong>Bank Name:</strong> Saraswat Co-operative Bank Ltd<br>Aundh Branch</p>
+                    <p><strong>Account Type:</strong> Cash-Credit</p>
+                    <p><strong>Account No:</strong> 810000000005369<br></p>
+                    <p><strong>IFSC:</strong> SRCB0000083<br></p>
+                    <p><strong>MICR:</strong> 411088011</p>
+                </div>
+
+                <!-- Customer Commitment -->
+                <div class="info-box">
+                    <h3>Our Commitment</h3>
+                    <p>We are focused on delivering best service, high-quality print media solutions, and exceptional service for manufactured products. We are gradually expanding our customer base across Mumbai and other regions.</p>
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--sky-blue);">WE EXECUTE 'SATISFACTION'</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <div class="contact-item">
+                    <h3>📍 Our Location</h3>
+                    <p>B-1, T-80 Mangalmurti Apartment<br>MIDC, Bhosari<br>Pune - 411039, India</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Contact Numbers</h3>
+                    <p>For inquiries and orders, please reach out to us. We're here to help!</p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p>We respond promptly to all customer inquiries</p>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Soham Traders</h3>
+                <p>Your trusted partner for quality office supplies and business solutions. Committed to excellence and customer satisfaction.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#products">Products</a>
+                <a href="#customers">Customers</a>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <a href="#products">Stationery</a>
+                <a href="#products">Printers</a>
+                <a href="#products">Housekeeping</a>
+                <a href="#products">Printing</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="#contact">Contact Us</a>
+                <p style="margin-top: 1rem;">MIDC, Bhosari<br>Pune - 411039</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Soham Traders. All rights reserved. | Excellence in Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 12px rgba(30, 90, 168, 0.15)';
+            } else {
+                nav.style.boxShadow = '0 2px 8px rgba(30, 90, 168, 0.1)';
+            }
+        });
+
+        // Form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you shortly.');
+            this.reset();
+        });
+
+        // CTA button navigation
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
